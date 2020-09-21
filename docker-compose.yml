@@ -3,6 +3,8 @@ services:
   drupal:
     image: drupal:7.73
     restart: always
+    environment:
+      DATABASE_HOST: mysql
     ports:
       - 8080:80
       - 8443:443
@@ -15,6 +17,7 @@ services:
       MYSQL_DATABASE: 'db_drupal'
       MYSQL_USER: 'usr_drupal'
       MYSQL_PASSWORD: 'drupal'
+      MYSQL_ROOT_PASSWORD: 'drupal'
       MYSQL_MAX_ALLOWED_PACKET: '1024M'
     ports:
       - 3306:3306
