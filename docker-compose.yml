@@ -1,7 +1,9 @@
 version: "3"
 services:
+  ###### DRUPAL 7 ######
   drupal:
     image: drupal:7.73
+    container_name: drupal-7.73
     restart: always
     environment:
       DATABASE_HOST: mysql
@@ -10,8 +12,14 @@ services:
       - 8443:443
     volumes:
       - ./web/:/var/www/html/:rw,delegated
+    networks:
+      - network
+    depends_on:
+      - mysql
+  ###### MySQL ######
   mysql:
     image: mysql:5.7
+    container_name: mysql-5.7
     restart: always
     environment:
       MYSQL_DATABASE: 'db_drupal'
@@ -25,3 +33,15 @@ services:
       - '3306'
     volumes:
       - ./db:/var/lib/mysql
+    networks:
+      - network
+  ###### Drush 8 ######
+  drush:
+    image: drush/drush:8
+    container_name: drush-8
+    volumes:
+      - ./web/:/app
+    networks:
+      - network
+networks:
+  network:
