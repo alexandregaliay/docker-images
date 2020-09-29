@@ -32,16 +32,12 @@ services:
     expose:
       - '3306'
     volumes:
-      - ./db:/var/lib/mysql
+      - db:/var/lib/mysql
     networks:
       - network
-  ###### Drush 8 ######
-  drush:
-    image: drush/drush:8
-    container_name: drush-8
-    volumes:
-      - ./web/:/app
-    networks:
-      - network
+###### NETWORKS ######
 networks:
   network:
+###### VOLUMES ######
+volumes:
+  db:
