@@ -1,5 +1,6 @@
 version: "3"
 services:
+
   ###### DRUPAL 7 ######
   drupal:
     image: drupal:7.73
@@ -16,6 +17,7 @@ services:
       - network
     depends_on:
       - mysql
+
   ###### MySQL ######
   mysql:
     image: mysql:5.7
@@ -35,9 +37,11 @@ services:
       - db:/var/lib/mysql
     networks:
       - network
+
 ###### NETWORKS ######
 networks:
   network:
+    
 ###### VOLUMES ######
 volumes:
   db:
