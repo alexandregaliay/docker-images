@@ -3,7 +3,7 @@ services:
 
   ###### DRUPAL 7 ######
   drupal:
-    image: drupal:7.73
+    image: d7-custom:1.0
     container_name: drupal-7.73
     restart: always
     environment:
@@ -41,7 +41,7 @@ services:
 ###### NETWORKS ######
 networks:
   network:
-    
+
 ###### VOLUMES ######
 volumes:
   db:
