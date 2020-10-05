@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     wget \
     nano \
     git \
-    unzip
+    unzip \
+    default-mysql-client
 
 # Install Drush 8.4.5
 RUN wget -nv https://github.com/drush-ops/drush/releases/download/8.4.5/drush.phar \
