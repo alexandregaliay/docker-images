@@ -1,5 +1,5 @@
 # Docker base image
-FROM drupal:7.78
+FROM drupal:7
 
 # Install packages
 RUN apt-get update && apt-get install --no-install-recommends -y \
