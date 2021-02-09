@@ -9,7 +9,6 @@ services:
       DATABASE_HOST: mysql
     ports:
       - 8080:80
-      - 8443:443
     volumes:
       - ./html/:/var/www/html/:rw,delegated
     networks:
