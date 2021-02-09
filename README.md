@@ -2,10 +2,16 @@
 
 Docker configuration for Drupal 7 development
 
-### Build image
+### Build custom image
 
 ```bash
 docker build -t "d7-custom:1.0" .
+```
+
+### Test Drupal 7 orig image
+
+```bash
+docker run -d -p 8080:80 "drupal:7"
 ```
 
 ### Launch docker compose
@@ -14,7 +20,7 @@ docker build -t "d7-custom:1.0" .
 docker-compose up -d
 ```
 
-### Work inside containre
+### Work inside container
 
 ```bash
 docker exec -it <containerID> /bin/bash
