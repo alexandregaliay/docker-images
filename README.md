@@ -2,10 +2,16 @@
 
 Docker configuration for Drupal 8 development
 
-### Build image
+### Build custom image
 
 ```bash
 docker build -t "d8-custom:1.0" .
+```
+
+### Test Drupal 8 orig image
+
+```bash
+docker run -d -p 8080:80 "drupal:8"
 ```
 
 ### Launch docker compose
@@ -14,8 +20,10 @@ docker build -t "d8-custom:1.0" .
 docker-compose up -d
 ```
 
-### Work inside containre
+### Work inside container
 
 ```bash
 docker exec -it <containerID> /bin/bash
 ```
+
+### Install Drupal with composer recommended-project
