@@ -9,8 +9,8 @@ services:
       DATABASE_HOST: mysql
     ports:
       - 8080:80
-    # volumes:
-    #   - ./html/:/opt/drupal/:rw,delegated
+    volumes:
+      - files:/opt/drupal
     networks:
       - network
     depends_on:
@@ -42,4 +42,5 @@ networks:
 
 ###### VOLUMES ######
 volumes:
+  files:
   db:
