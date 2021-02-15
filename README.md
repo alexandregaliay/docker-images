@@ -25,5 +25,3 @@ docker-compose up -d
 ```bash
 docker exec -it <containerID> /bin/bash
 ```
-
-### Install Drupal with composer recommended-project
