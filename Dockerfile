@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set bash alias
-RUN echo "alias la='ls -la'" >> ~/.bashrc \
+RUN echo "alias la='ls -la --color=auto'" >> ~/.bashrc \
     && . ~/.bashrc
 
 # Install Composer
