@@ -22,10 +22,10 @@ services:
     container_name: mysql-5.7
     restart: always
     environment:
-      MYSQL_DATABASE: "db_drupal"
-      MYSQL_USER: "usr_drupal"
-      MYSQL_PASSWORD: "drupal"
-      MYSQL_ROOT_PASSWORD: "drupal"
+      MYSQL_DATABASE: "db_d8"
+      MYSQL_USER: "usr_d8"
+      MYSQL_PASSWORD: "d8"
+      MYSQL_ROOT_PASSWORD: "d8"
       MYSQL_MAX_ALLOWED_PACKET: "1024M"
     ports:
       - 3306:3306
