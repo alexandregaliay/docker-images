@@ -8,12 +8,6 @@ Docker configuration for Drupal 8 development
 docker run -d -p 8080:80 "drupal:8"
 ```
 
-### Build custom image
-
-```bash
-docker build -t "d8-custom:1.0" .
-```
-
 ### Launch docker compose
 
 ```bash
