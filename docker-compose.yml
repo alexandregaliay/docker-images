@@ -11,7 +11,10 @@ services:
     ports:
       - 8080:80
     volumes:
+      # Mounted volume
       - files:/var/www/html
+      # Local folder mapping
+      # - ./html/:/var/www/html
     networks:
       - network
     depends_on:
