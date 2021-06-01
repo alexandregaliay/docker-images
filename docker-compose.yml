@@ -11,7 +11,10 @@ services:
     ports:
       - 8080:80
     volumes:
+      # Mounted volume
       - files:/opt/drupal
+      # Local folder mapping
+      - ./:/opt/drupal
     networks:
       - network
     depends_on:
