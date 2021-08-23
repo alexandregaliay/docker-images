@@ -1,9 +1,9 @@
 version: "3"
 services:
-  ###### DRUPAL 8 ######
+  ###### DRUPAL ######
   drupal:
-    image: d8-custom:1.0
-    container_name: drupal-8
+    image: drupal-custom:8
+    container_name: web
     build: .
     restart: always
     environment:
@@ -11,9 +11,6 @@ services:
     ports:
       - 8080:80
     volumes:
-      # Mounted volume
-      - files:/opt/drupal
-      # Local folder mapping
       - ./:/opt/drupal
     networks:
       - network
@@ -23,7 +20,7 @@ services:
   ###### MySQL ######
   mysql:
     image: mysql:5.7
-    container_name: mysql-5.7
+    container_name: mysql
     restart: always
     environment:
       MYSQL_DATABASE: "drupal"
@@ -46,5 +43,4 @@ networks:
 
 ###### VOLUMES ######
 volumes:
-  files:
   db:
