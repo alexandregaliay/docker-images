@@ -1,9 +1,9 @@
 version: "3"
 services:
-  ###### DRUPAL 7 ######
+  ###### DRUPAL ######
   drupal:
-    image: d7-custom:1.0
-    container_name: drupal-7
+    image: drupal-custom:7
+    container_name: web
     build: .
     restart: always
     environment:
@@ -11,10 +11,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      # Mounted volume
-      - files:/var/www/html
-      # Local folder mapping
-      # - ./html/:/var/www/html
+      - ./:/var/www/html
     networks:
       - network
     depends_on:
@@ -23,7 +20,7 @@ services:
   ###### MySQL ######
   mysql:
     image: mysql:5.7
-    container_name: mysql-5.7
+    container_name: mysql
     restart: always
     environment:
       MYSQL_DATABASE: "drupal"
@@ -46,5 +43,4 @@ networks:
 
 ###### VOLUMES ######
 volumes:
-  files:
   db:
