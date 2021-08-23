@@ -1,11 +1,9 @@
-# Docker images
-
 <img src="docker-logo.png" width="250" />
 
 ### Test Docker image
 
 ```bash
-docker run -d -p 8080:80 "image-name"
+docker run -d -p 8080:80 "image"
 ```
 
 ### Launch docker compose
