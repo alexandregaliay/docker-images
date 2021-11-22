@@ -22,6 +22,8 @@ services:
     image: mysql:5.7
     container_name: mysql
     restart: always
+    # Set max_allowed_packet to 256M (or any other value)
+    #command: --max_allowed_packet=32505856
     environment:
       MYSQL_DATABASE: "drupal"
       MYSQL_USER: "drupal"
